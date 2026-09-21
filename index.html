@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ReelForge — Cinematic AI Promo Reels for Local Businesses</title>
+<meta name="description" content="ReelForge turns your business into scroll-stopping cinematic reels. $40, delivered in 48 hours. No shoots, no crews — just send your details and we forge the rest with AI." />
+<meta property="og:title" content="ReelForge — Cinematic AI Promo Reels for Local Businesses" />
+<meta property="og:description" content="$40. 48-hour delivery. Cinematic AI reels that make local brands impossible to ignore." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/og.webp" />
+<link rel="icon" type="image/webp" href="assets/logo.webp" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: { ember: '#ff6b1a', coal: '#0b0b0f', smoke: '#14141b' },
+    fontFamily: { display: ['Space Grotesk','sans-serif'], body: ['Inter','sans-serif'] }
+  }}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { background:#0b0b0f; }
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+  .hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .grain::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.14; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); }
+  .faq-answer { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+  .faq-item.open .faq-answer { max-height:220px; }
+  .faq-item.open .faq-chevron { transform:rotate(180deg); }
+  .faq-chevron { transition:transform .3s ease; }
+  video.sample { transition:transform .5s ease; }
+  .sample-card:hover video.sample { transform:scale(1.05); }
+</style>
+</head>
+<body class="text-zinc-200 font-body antialiased">
+
+<!-- NAV -->
+<nav id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2.5">
+      <img src="assets/logo.webp" alt="ReelForge" class="w-9 h-9 rounded-lg" />
+      <span class="font-display font-700 font-bold text-lg tracking-tight text-white">ReelForge</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm text-zinc-400">
+      <a href="#samples" class="hover:text-white transition">Samples</a>
+      <a href="#how" class="hover:text-white transition">How it works</a>
+      <a href="#pricing" class="hover:text-white transition">Pricing</a>
+      <a href="#faq" class="hover:text-white transition">FAQ</a>
+    </div>
+    <a href="https://ig.me/m/dyafterdark_" target="_blank" rel="noopener"
+       class="bg-ember hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition shadow-lg shadow-ember/25">
+      Order now
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top" class="relative min-h-screen flex items-end grain overflow-hidden">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/og.webp">
+    <source src="samples/reelforge-cafe.mp4" type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 bg-gradient-to-t from-coal via-coal/60 to-coal/30"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-5 pb-24 pt-40 w-full">
+    <div class="reveal inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/15 rounded-full px-4 py-1.5 text-xs font-medium text-zinc-300 mb-6">
+      <span class="w-2 h-2 rounded-full bg-ember animate-pulse"></span>
+      Accepting new orders — 48-hour delivery
+    </div>
+    <h1 class="reveal font-display font-bold text-white tracking-tight text-5xl md:text-7xl leading-[1.02] max-w-3xl">
+      Your business,<br />forged for the <span class="text-ember">feed</span>.
+    </h1>
+    <p class="reveal mt-6 text-lg md:text-xl text-zinc-300 max-w-xl">
+      Cinematic AI promo reels for local brands. <strong class="text-white">$40</strong>, delivered in
+      <strong class="text-white">48 hours</strong>. No shoots, no crews — just send your details, we forge the rest.
+    </p>
+    <div class="reveal mt-9 flex flex-wrap gap-4">
+      <a href="https://ig.me/m/dyafterdark_" target="_blank" rel="noopener"
+         class="bg-ember hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-ember/30 text-base">
+        Order your reel — $40
+      </a>
+      <a href="#samples" class="border border-white/25 hover:border-white/60 text-white font-semibold px-8 py-4 rounded-full transition text-base">
+        Watch samples
+      </a>
+    </div>
+    <div class="reveal mt-12 flex gap-10 text-sm">
+      <div><div class="font-display font-bold text-2xl text-white">48h</div><div class="text-zinc-400">delivery</div></div>
+      <div><div class="font-display font-bold text-2xl text-white">$40</div><div class="text-zinc-400">flat price</div></div>
+      <div><div class="font-display font-bold text-2xl text-white">0</div><div class="text-zinc-400">shoots needed</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- FOR STRIP -->
+<div class="border-y border-white/10 bg-smoke/60">
+  <div class="max-w-6xl mx-auto px-5 py-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm text-zinc-500 font-medium tracking-wide">
+    <span class="text-zinc-600 uppercase text-xs">Forged for</span>
+    <span>Cafés</span><span>Gyms</span><span>Boutiques</span><span>Salons</span><span>Restaurants</span><span>Cloud kitchens</span>
+  </div>
+</div>
+
+<!-- SAMPLES -->
+<section id="samples" class="max-w-6xl mx-auto px-5 py-24">
+  <div class="reveal text-center max-w-2xl mx-auto">
+    <p class="text-ember font-semibold text-sm uppercase tracking-widest mb-3">Samples</p>
+    <h2 class="font-display font-bold text-white text-4xl md:text-5xl tracking-tight">Forged this week</h2>
+    <p class="mt-4 text-zinc-400 text-lg">Real AI-generated promos. Imagine your brand in the frame.</p>
+  </div>
+  <div class="mt-12 grid md:grid-cols-3 gap-6">
+    <div class="reveal sample-card group relative rounded-2xl overflow-hidden border border-white/10 bg-smoke aspect-[9/16] max-h-[520px] w-full">
+      <video class="sample w-full h-full object-cover" muted loop playsinline preload="metadata" poster="assets/og.webp">
+        <source src="samples/reelforge-cafe.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/85 to-transparent">
+        <p class="text-ember text-xs font-semibold uppercase tracking-widest">Café</p>
+        <p class="text-white font-display font-semibold text-lg">Morning brew, cinematic pour</p>
+      </div>
+      <button class="play-btn absolute inset-0 m-auto w-16 h-16 rounded-full bg-ember/90 text-white text-xl flex items-center justify-center group-hover:scale-110 transition" aria-label="Play">▶</button>
+    </div>
+    <div class="reveal sample-card group relative rounded-2xl overflow-hidden border border-white/10 bg-smoke aspect-[9/16] max-h-[520px] w-full" style="transition-delay:.1s">
+      <video class="sample w-full h-full object-cover" muted loop playsinline preload="metadata" poster="assets/og.webp">
+        <source src="samples/reelforge-gym.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/85 to-transparent">
+        <p class="text-ember text-xs font-semibold uppercase tracking-widest">Gym</p>
+        <p class="text-white font-display font-semibold text-lg">Iron, sweat, neon</p>
+      </div>
+      <button class="play-btn absolute inset-0 m-auto w-16 h-16 rounded-full bg-ember/90 text-white text-xl flex items-center justify-center group-hover:scale-110 transition" aria-label="Play">▶</button>
+    </div>
+    <div class="reveal sample-card group relative rounded-2xl overflow-hidden border border-white/10 bg-smoke aspect-[9/16] max-h-[520px] w-full" style="transition-delay:.2s">
+      <video class="sample w-full h-full object-cover" muted loop playsinline preload="metadata" poster="assets/og.webp">
+        <source src="samples/reelforge-boutique.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/85 to-transparent">
+        <p class="text-ember text-xs font-semibold uppercase tracking-widest">Boutique</p>
+        <p class="text-white font-display font-semibold text-lg">Streetwear after dark</p>
+      </div>
+      <button class="play-btn absolute inset-0 m-auto w-16 h-16 rounded-full bg-ember/90 text-white text-xl flex items-center justify-center group-hover:scale-110 transition" aria-label="Play">▶</button>
+    </div>
+  </div>
+  <p class="reveal text-center text-zinc-500 text-sm mt-8">Tap any reel to play. Every sample above was generated with AI — no camera crew involved.</p>
+</section>
+<!-- HOW IT WORKS -->
+<section id="how" class="border-y border-white/10 bg-smoke/40">
+  <div class="max-w-6xl mx-auto px-5 py-24">
+    <div class="reveal text-center max-w-2xl mx-auto">
+      <p class="text-ember font-semibold text-sm uppercase tracking-widest mb-3">How it works</p>
+      <h2 class="font-display font-bold text-white text-4xl md:text-5xl tracking-tight">From DM to done in 48 hours</h2>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="reveal rounded-2xl border border-white/10 bg-coal p-8">
+        <div class="font-display font-bold text-ember text-4xl">01</div>
+        <h3 class="font-display font-semibold text-white text-xl mt-4">Send your details</h3>
+        <p class="text-zinc-400 mt-3">DM us your business name, a few photos or your logo, and 2–3 lines about what makes you special. That's the entire brief.</p>
+      </div>
+      <div class="reveal rounded-2xl border border-white/10 bg-coal p-8" style="transition-delay:.1s">
+        <div class="font-display font-bold text-ember text-4xl">02</div>
+        <h3 class="font-display font-semibold text-white text-xl mt-4">We forge the reel</h3>
+        <p class="text-zinc-400 mt-3">Our AI pipeline directs, shoots and edits a cinematic 30–45 second vertical reel built around your brand — captions and pacing included.</p>
+      </div>
+      <div class="reveal rounded-2xl border border-white/10 bg-coal p-8" style="transition-delay:.2s">
+        <div class="font-display font-bold text-ember text-4xl">03</div>
+        <h3 class="font-display font-semibold text-white text-xl mt-4">Post it everywhere</h3>
+        <p class="text-zinc-400 mt-3">Delivered in 48 hours, ready for Reels, Shorts and TikTok. Two revision rounds included so it lands exactly right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="max-w-6xl mx-auto px-5 py-24">
+  <div class="reveal text-center max-w-2xl mx-auto">
+    <p class="text-ember font-semibold text-sm uppercase tracking-widest mb-3">Pricing</p>
+    <h2 class="font-display font-bold text-white text-4xl md:text-5xl tracking-tight">One price. No fine print.</h2>
+  </div>
+  <div class="mt-12 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+    <div class="reveal rounded-3xl border border-white/10 bg-smoke p-9">
+      <p class="font-display font-semibold text-white text-xl">Single Reel</p>
+      <p class="mt-4"><span class="font-display font-bold text-white text-5xl">$40</span></p>
+      <ul class="mt-7 space-y-3.5 text-zinc-300 text-[15px]">
+        <li class="flex gap-3"><span class="text-ember">✓</span> 30–45 second vertical reel (9:16)</li>
+        <li class="flex gap-3"><span class="text-ember">✓</span> Cinematic AI visuals + captions</li>
+        <li class="flex gap-3"><span class="text-ember">✓</span> 2 revision rounds included</li>
+        <li class="flex gap-3"><span class="text-ember">✓</span> Full commercial usage rights</li>
+        <li class="flex gap-3"><span class="text-ember">✓</span> Delivered in 48 hours</li>
+      </ul>
+      <a href="https://ig.me/m/dyafterdark_" target="_blank" rel="noopener" class="mt-8 block text-center border border-ember text-ember hover:bg-ember hover:text-white font-semibold px-8 py-3.5 rounded-full transition">Order single reel</a>
+    </div>
+    <div class="reveal rounded-3xl border-2 border-ember bg-gradient-to-b from-ember/10 to-smoke p-9 relative" style="transition-delay:.1s">
+      <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-ember text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">Most popular</span>
+      <p class="font-display font-semibold text-white text-xl">3-Reel Pack</p>
+      <p class="mt-4"><span class="font-display font-bold text-white text-5xl">$99</span> <span class="text-zinc-500 line-through ml-2">$120</span></p>
+      <ul class="mt-7 space-y-3.5 text-zinc-300 text-[15px]">
+        <li class="flex gap-3"><span class="text-ember">✓</span> Everything in Single Reel × 3</li>
+        <li class="flex gap-3"><span class="text-ember">✓</span> One full month of content</li>
+        <li class="flex gap-3"><span class="text-ember">✓</span> Consistent brand style across reels</li>
+        <li class="flex gap-3"><span class="text-ember">✓</span> Priority 24-hour rush available</li>
+        <li class="flex gap-3"><span class="text-ember">✓</span> Save $21</li>
+      </ul>
+      <a href="https://ig.me/m/dyafterdark_" target="_blank" rel="noopener" class="mt-8 block text-center bg-ember hover:bg-orange-600 text-white font-semibold px-8 py-3.5 rounded-full transition shadow-lg shadow-ember/25">Order 3-reel pack</a>
+    </div>
+  </div>
+  <p class="reveal text-center text-zinc-500 text-sm mt-8">Pay securely after you approve the concept — UPI &amp; cards accepted.</p>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="border-t border-white/10 bg-smoke/40">
+  <div class="max-w-3xl mx-auto px-5 py-24">
+    <div class="reveal text-center">
+      <p class="text-ember font-semibold text-sm uppercase tracking-widest mb-3">FAQ</p>
+      <h2 class="font-display font-bold text-white text-4xl md:text-5xl tracking-tight">Questions, answered</h2>
+    </div>
+    <div class="mt-10 space-y-3">
+      <div class="reveal faq-item rounded-2xl border border-white/10 bg-coal overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5">
+          <span class="font-semibold text-white">Do I need to shoot anything myself?</span>
+          <span class="faq-chevron text-ember text-xl">▾</span>
+        </button>
+        <div class="faq-answer px-6"><p class="pb-5 text-zinc-400">No. Send us a few photos, your logo or menu — our AI pipeline handles the cinematography, motion and edit. Zero camera work on your side.</p></div>
+      </div>
+      <div class="reveal faq-item rounded-2xl border border-white/10 bg-coal overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5">
+          <span class="font-semibold text-white">What exactly do you need from me?</span>
+          <span class="faq-chevron text-ember text-xl">▾</span>
+        </button>
+        <div class="faq-answer px-6"><p class="pb-5 text-zinc-400">Your business name, 3–5 photos (or logo/menu), and 2–3 lines on what to highlight — a signature dish, an offer, your vibe. That's the whole brief.</p></div>
+      </div>
+      <div class="reveal faq-item rounded-2xl border border-white/10 bg-coal overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5">
+          <span class="font-semibold text-white">How fast is delivery, really?</span>
+          <span class="faq-chevron text-ember text-xl">▾</span>
+        </button>
+        <div class="faq-answer px-6"><p class="pb-5 text-zinc-400">48 hours from brief approval for a single reel. 3-reel packs deliver one every 48 hours. Need it faster? Ask about 24-hour rush on the pack.</p></div>
+      </div>
+      <div class="reveal faq-item rounded-2xl border border-white/10 bg-coal overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5">
+          <span class="font-semibold text-white">What if I don't like the first cut?</span>
+          <span class="faq-chevron text-ember text-xl">▾</span>
+        </button>
+        <div class="faq-answer px-6"><p class="pb-5 text-zinc-400">Two revision rounds are included in every order — pacing, text, mood, music styling. We iterate until it feels like your brand.</p></div>
+      </div>
+      <div class="reveal faq-item rounded-2xl border border-white/10 bg-coal overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5">
+          <span class="font-semibold text-white">Who owns the final video?</span>
+          <span class="faq-chevron text-ember text-xl">▾</span>
+        </button>
+        <div class="faq-answer px-6"><p class="pb-5 text-zinc-400">You do — full commercial usage rights. Post it on Reels, Shorts, TikTok, your website, or run it as an ad. It's yours.</p></div>
+      </div>
+      <div class="reveal faq-item rounded-2xl border border-white/10 bg-coal overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5">
+          <span class="font-semibold text-white">How do I pay?</span>
+          <span class="faq-chevron text-ember text-xl">▾</span>
+        </button>
+        <div class="faq-answer px-6"><p class="pb-5 text-zinc-400">After you approve the concept we send a secure payment link — UPI and cards accepted. No advance needed to start the conversation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="relative overflow-hidden grain">
+  <img src="assets/og.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25" />
+  <div class="absolute inset-0 bg-gradient-to-b from-coal via-coal/70 to-coal"></div>
+  <div class="relative max-w-3xl mx-auto px-5 py-28 text-center">
+    <h2 class="reveal font-display font-bold text-white text-4xl md:text-6xl tracking-tight">Your competitors are posting.<br />Are you?</h2>
+    <p class="reveal mt-5 text-zinc-300 text-lg">One DM. 48 hours. A reel that makes your business impossible to scroll past.</p>
+    <a href="https://ig.me/m/dyafterdark_" target="_blank" rel="noopener"
+       class="reveal inline-block mt-9 bg-ember hover:bg-orange-600 text-white font-semibold px-10 py-4 rounded-full transition shadow-xl shadow-ember/30 text-lg">
+      Forge my reel — $40
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-5">
+    <div class="flex items-center gap-2.5">
+      <img src="assets/logo.webp" alt="ReelForge" class="w-8 h-8 rounded-lg" />
+      <span class="font-display font-bold text-white">ReelForge</span>
+      <span class="text-zinc-600 text-sm ml-2">© 2026 — Forged with AI</span>
+    </div>
+    <div class="flex items-center gap-6 text-sm text-zinc-400">
+      <a href="#samples" class="hover:text-white transition">Samples</a>
+      <a href="#pricing" class="hover:text-white transition">Pricing</a>
+      <a href="https://www.instagram.com/dyafterdark_" target="_blank" rel="noopener" class="hover:text-white transition">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav background on scroll
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => {
+    nav.classList.toggle('bg-coal/85', scrollY > 40);
+    nav.classList.toggle('backdrop-blur-md', scrollY > 40);
+    nav.classList.toggle('border-b', scrollY > 40);
+    nav.classList.toggle('border-white/10', scrollY > 40);
+  }, { passive: true });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Sample video play buttons
+  document.querySelectorAll('.sample-card').forEach(card => {
+    const video = card.querySelector('video');
+    const btn = card.querySelector('.play-btn');
+    const toggle = () => {
+      document.querySelectorAll('.sample-card video').forEach(v => { if (v !== video) { v.pause(); v.closest('.sample-card').querySelector('.play-btn').style.display = ''; } });
+      if (video.paused) { video.play(); btn.style.display = 'none'; }
+      else { video.pause(); btn.style.display = ''; }
+    };
+    btn.addEventListener('click', toggle);
+    video.addEventListener('click', toggle);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }));
+</script>
+</body>
+</html>
