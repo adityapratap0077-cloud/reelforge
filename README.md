@@ -2,7 +2,7 @@
 
 Cinematic AI promo reels for local businesses. $40, delivered in 48 hours.
 
-**Live site:** https://reelforge.vercel.app
+**Live site:** https://reelforge-opal.vercel.app
 
 ## What it is
 
