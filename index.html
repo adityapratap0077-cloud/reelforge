@@ -28,8 +28,9 @@ tailwind.config = {
   .hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
   .grain::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.14; mix-blend-mode:overlay;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); }
-  .faq-answer { max-height:0; overflow:hidden; transition:max-height .35s ease; }
-  .faq-item.open .faq-answer { max-height:220px; }
+  .faq-answer { display:grid; grid-template-rows:0fr; transition:grid-template-rows .35s ease; }
+  .faq-answer > * { overflow:hidden; min-height:0; }
+  .faq-item.open .faq-answer { grid-template-rows:1fr; }
   .faq-item.open .faq-chevron { transform:rotate(180deg); }
   .faq-chevron { transition:transform .3s ease; }
   video.sample { transition:transform .5s ease; }
@@ -60,9 +61,11 @@ tailwind.config = {
 
 <!-- HERO -->
 <header id="top" class="relative min-h-screen flex items-end grain overflow-hidden">
-  <video class="hero-video" autoplay muted loop playsinline poster="assets/og.webp">
+  <video id="hero-video" class="hero-video" autoplay muted loop playsinline poster="assets/og.webp">
     <source src="samples/reelforge-cafe.mp4" type="video/mp4" />
   </video>
+  <button id="hero-play" aria-label="Play showreel" style="display:none"
+    class="absolute inset-0 m-auto w-16 h-16 rounded-full bg-ember/90 text-white text-xl items-center justify-center z-20 hover:scale-110 transition">▶</button>
   <div class="absolute inset-0 bg-gradient-to-t from-coal via-coal/60 to-coal/30"></div>
   <div class="relative z-10 max-w-6xl mx-auto px-5 pb-24 pt-40 w-full">
     <div class="reveal inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/15 rounded-full px-4 py-1.5 text-xs font-medium text-zinc-300 mb-6">
@@ -110,7 +113,6 @@ tailwind.config = {
 <!-- SAMPLES -->
 <section id="samples" class="max-w-6xl mx-auto px-5 py-24">
   <div class="reveal text-center max-w-2xl mx-auto">
-    <p class="text-ember font-semibold text-sm uppercase tracking-widest mb-3">Samples</p>
     <h2 class="font-display font-bold text-white text-4xl md:text-5xl tracking-tight">Forged this week</h2>
     <p class="mt-4 text-zinc-400 text-lg">Real AI-generated promos. Imagine your brand in the frame.</p>
     <p class="mt-2 text-sm text-zinc-500">Spec work forged in-house. Client reels landing soon.</p>
@@ -159,7 +161,6 @@ tailwind.config = {
 <section id="how" class="border-y border-white/10 bg-smoke/40">
   <div class="max-w-6xl mx-auto px-5 py-24">
     <div class="reveal text-center max-w-2xl mx-auto">
-      <p class="text-ember font-semibold text-sm uppercase tracking-widest mb-3">How it works</p>
       <h2 class="font-display font-bold text-white text-4xl md:text-5xl tracking-tight">From DM to done in 48 hours</h2>
     </div>
     <div class="mt-12 grid md:grid-cols-3 gap-6">
@@ -185,7 +186,6 @@ tailwind.config = {
 <!-- PRICING -->
 <section id="pricing" class="max-w-6xl mx-auto px-5 py-24">
   <div class="reveal text-center max-w-2xl mx-auto">
-    <p class="text-ember font-semibold text-sm uppercase tracking-widest mb-3">Pricing</p>
     <h2 class="font-display font-bold text-white text-4xl md:text-5xl tracking-tight">One price. No fine print.</h2>
   </div>
   <div class="mt-12 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -205,12 +205,12 @@ tailwind.config = {
       <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-ember text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">Most popular</span>
       <p class="font-display font-semibold text-white text-xl">3-Reel Pack</p>
       <p class="mt-4"><span class="font-display font-bold text-white text-5xl">$99</span> <span class="text-zinc-500 line-through ml-2">$120</span></p>
+      <p class="text-ember text-sm font-semibold mt-1">Just $33 per reel</p>
       <ul class="mt-7 space-y-3.5 text-zinc-300 text-[15px]">
         <li class="flex gap-3"><span class="text-ember">✓</span> Everything in Single Reel × 3</li>
-        <li class="flex gap-3"><span class="text-ember">✓</span> One full month of content</li>
+        <li class="flex gap-3"><span class="text-ember">✓</span> Launch reel + offer reel + vibe reel — each with a job</li>
         <li class="flex gap-3"><span class="text-ember">✓</span> Consistent brand style across reels</li>
         <li class="flex gap-3"><span class="text-ember">✓</span> Priority 24-hour rush available</li>
-        <li class="flex gap-3"><span class="text-ember">✓</span> Save $21</li>
       </ul>
       <a href="https://ig.me/m/dyafterdark_" target="_blank" rel="noopener" class="mt-8 block text-center bg-ember hover:bg-orange-600 text-white font-semibold px-8 py-3.5 rounded-full transition shadow-lg shadow-ember/25">Order 3-reel pack</a>
     </div>
@@ -222,7 +222,6 @@ tailwind.config = {
 <section id="faq" class="border-t border-white/10 bg-smoke/40">
   <div class="max-w-3xl mx-auto px-5 py-24">
     <div class="reveal text-center">
-      <p class="text-ember font-semibold text-sm uppercase tracking-widest mb-3">FAQ</p>
       <h2 class="font-display font-bold text-white text-4xl md:text-5xl tracking-tight">Questions, answered</h2>
     </div>
     <div class="mt-10 space-y-3">
@@ -318,6 +317,25 @@ tailwind.config = {
     nav.classList.toggle('border-white/10', scrollY > 40);
   }, { passive: true });
 
+  // Hero video: poster-first on mobile / reduced-data, tap-to-play; desktop autoplays
+  (function () {
+    const v = document.getElementById('hero-video');
+    const btn = document.getElementById('hero-play');
+    if (!v || !btn) return;
+    const light = matchMedia('(max-width: 767px)').matches ||
+                  matchMedia('(prefers-reduced-data: reduce)').matches;
+    if (!light) return;
+    v.removeAttribute('autoplay');
+    v.preload = 'none';
+    v.pause();
+    btn.style.display = 'flex';
+    btn.addEventListener('click', () => {
+      v.preload = 'auto';
+      v.play().catch(() => {});
+      btn.style.display = 'none';
+    });
+  })();
+
   // Reveal on scroll
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
@@ -380,15 +398,22 @@ tailwind.config = {
   var CHAT_URL = "https://banaobot.onrender.com/b/IzGuyVbQQStAgXBg4CulVNOxFOu7x3rp?embed=1";
   var btn = document.createElement("button");
   btn.textContent = "\u{1F4AC}";
-  btn.setAttribute("aria-label", "Open chat");
+  btn.setAttribute("aria-label", "Questions? Chat here");
   btn.style.cssText = "position:fixed;right:20px;bottom:20px;width:60px;height:60px;"
-    + "border-radius:50%;background:#e85d26;border:2px solid #16130e;"
-    + "box-shadow:4px 4px 0 #16130e;font-size:26px;cursor:pointer;z-index:999999;";
+    + "border-radius:50%;background:#ff6b1a;border:none;"
+    + "box-shadow:0 8px 30px rgba(255,107,26,.35);font-size:26px;cursor:pointer;z-index:999999;";
+  var label = document.createElement("span");
+  label.textContent = "Questions? Chat here";
+  label.style.cssText = "position:fixed;right:92px;bottom:38px;background:#14141b;"
+    + "border:1px solid rgba(255,255,255,.12);color:#fff;border-radius:999px;"
+    + "font:600 13px 'Space Grotesk',sans-serif;padding:8px 14px;z-index:999999;"
+    + "box-shadow:0 4px 16px rgba(0,0,0,.4);white-space:nowrap;";
+  document.body.appendChild(label);
   var panel = document.createElement("div");
   panel.style.cssText = "position:fixed;right:20px;bottom:96px;"
     + "width:min(380px,calc(100vw - 40px));height:min(560px,calc(100vh - 130px));"
-    + "border:2px solid #16130e;border-radius:12px;overflow:hidden;"
-    + "box-shadow:6px 6px 0 #16130e;background:#faf6ee;z-index:999999;display:none;";
+    + "border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;"
+    + "box-shadow:0 20px 60px rgba(0,0,0,.5);background:#14141b;z-index:999999;display:none;";
   var frame = document.createElement("iframe");
   frame.src = CHAT_URL;
   frame.title = "Chat";
@@ -397,7 +422,7 @@ tailwind.config = {
   close.textContent = "\u00D7";
   close.setAttribute("aria-label", "Close chat");
   close.style.cssText = "position:absolute;top:8px;right:10px;width:30px;height:30px;"
-    + "border-radius:50%;background:#16130e;color:#faf6ee;border:none;"
+    + "border-radius:50%;background:rgba(255,255,255,.1);color:#fff;border:none;"
     + "font-size:18px;line-height:1;cursor:pointer;";
   close.onclick = function () { panel.style.display = "none"; };
   btn.onclick = function () {
