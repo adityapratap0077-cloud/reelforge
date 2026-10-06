@@ -1,3 +1,8 @@
+<p>
+  <a href="https://reelforge-opal.vercel.app"><img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=flat-square" alt="Live Demo" /></a>
+  <img src="https://img.shields.io/badge/AI--Video-Generated-blueviolet?style=flat-square" alt="AI Video" />
+</p>
+
 # ReelForge
 
 Cinematic AI promo reels for local businesses. $40, delivered in 48 hours.
