@@ -19,4 +19,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://reelforge-opal.vercel.app/sitemap.xml
+Sitemap: https://getreelforge.vercel.app/sitemap.xml
