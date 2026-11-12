@@ -15,7 +15,7 @@ local businesses (cafés, gyms, boutiques, salons, restaurants). The page includ
 
 ## Tech
 
-Single static `index.html` with Tailwind CDN — no build step. Deploys straight to Vercel.
+Single static `index.html` with Tailwind CDN: no build step. Deploys straight to Vercel.
 
 ## Media
 
